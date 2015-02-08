@@ -64,7 +64,11 @@ if(isset($_POST["newHostName"])){
 		
 	</head>
 	<body>
-		<h1>woohoo</h1>
+		<h1>Virtual host creator</h1>
+		<?php 
+			if($error==1)	echo '<label>Name not allowed!</label>';
+			else if($error==2)	echo '<label>Name in use!</label>';
+		?>
 		<form method='post'>
 			<input type='text' placeholder='New host name' name='newHostName' />
 			<input type='submit' value='Add host'/>
